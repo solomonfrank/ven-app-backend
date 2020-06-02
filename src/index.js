@@ -3,6 +3,7 @@ import morgan from 'morgan';
 import dotenv from 'dotenv';
 import cors from 'cors';
 import apiRouter from './routes';
+import errorHandler from './middleware';
 
 dotenv.config();
 
@@ -27,6 +28,8 @@ app.all('*', async (req, res) => {
     message: `${req.originalUrl} does not exist on the server`,
   });
 });
+
+app.use(errorHandler);
 const PORT = process.env.PORT || 4000;
 
 const server = app.listen(PORT, () => {
