@@ -18,16 +18,16 @@ module.exports = {
         type: Sequelize.STRING,
       },
       country: {
-        type: Sequelize.STRING,
+        type: Sequelize.TEXT,
       },
       car_model: {
         type: Sequelize.STRING,
       },
       car_model_year: {
-        type: Sequelize.STRING,
+        type: Sequelize.INTEGER,
       },
       car_color: {
-        type: Sequelize.STRING,
+        type: Sequelize.TEXT,
       },
       gender: {
         type: Sequelize.STRING,
