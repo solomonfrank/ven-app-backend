@@ -15,7 +15,7 @@
     "migration:rollback:prod": "cross-env NODE_ENV=production db:migrate:undo:all && npm run migration",
     "migration": "./node_modules/.bin/sequelize db:migrate",
     "migration:prod": "cross-env NODE_ENV=production ./node_modules/.bin/sequelize db:migrate",
-    "heroku-postbuild": "npm run migration:rollback:prod && cross-env NODE_ENV=production && npm run build"
+    "heroku-postbuild": "npm install && npm run migration:rollback:prod && cross-env NODE_ENV=production && npm run build"
   },
   "author": "",
   "license": "ISC",
