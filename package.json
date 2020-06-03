@@ -8,15 +8,10 @@
     "npm": "6.12.1"
   },
   "scripts": {
-    "start": "cross-env NODE_ENV=production node dist/",
+    "start": "node dist/",
     "start:dev": "nodemon --exec babel-node ./src/index.js",
     "start:prod": "cross-env NODE_ENV=production nodemon --exec babel-node ./src/index.js",
-    "build": "rm -rf dist/ && babel src/ -d dist/",
-    "migration:rollback": " cross-env NODE_ENV=production ./node_modules/.bin/sequelize db:migrate:undo:all",
-    "migration:rollback:prod": "cross-env NODE_ENV=production db:migrate:undo:all && npm run migration",
-    "migration": "./node_modules/.bin/sequelize db:migrate",
-    "migration:prod": "cross-env NODE_ENV=production ./node_modules/.bin/sequelize db:migrate",
-    "heroku-postbuild": "npm install && npm run migration:rollback:prod && cross-env NODE_ENV=production && npm run build"
+    "build": "rm -rf dist/ && babel src/ -d dist/"
   },
   "author": "",
   "license": "ISC",
