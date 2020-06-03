@@ -8,6 +8,7 @@
     "npm": "6.12.1"
   },
   "scripts": {
+    "test": "mocha --timeout 200000 -r @babel/register ./src/test/**/*.test.js --exit",
     "start": "cross-env NODE_ENV=production node dist/",
     "start:dev": "nodemon --exec babel-node ./src/index.js",
     "start:prod": "cross-env NODE_ENV=production nodemon --exec babel-node ./src/index.js",
@@ -33,10 +34,13 @@
     "@babel/plugin-transform-runtime": "^7.10.1",
     "@babel/register": "^7.10.1",
     "@babel/runtime": "^7.10.2",
+    "chai": "^4.2.0",
+    "chai-http": "^4.3.0",
     "cors": "^2.8.5",
     "cross-env": "^7.0.2",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
+    "mocha": "^7.2.0",
     "morgan": "^1.10.0",
     "pg": "^8.2.1",
     "pg-hstore": "^2.3.3",
